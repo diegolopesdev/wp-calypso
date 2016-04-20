@@ -8,6 +8,7 @@ module.exports = {
 		},
 		defaultVariation: 'singlePurchaseFlow'
 	},
+
 	translatorInvitation: {
 		datestamp: '20150910',
 		variations: {
@@ -21,6 +22,7 @@ module.exports = {
 		defaultVariation: 'noNotice',
 		allowAnyLocale: true
 	},
+
 	freeTrialsInSignup: {
 		datestamp: '20160328',
 		variations: {
@@ -29,6 +31,7 @@ module.exports = {
 		},
 		defaultVariation: 'disabled'
 	},
+
 	freeTrialNudgeOnThankYouPage: {
 		datestamp: '20160328',
 		variations: {
@@ -37,6 +40,7 @@ module.exports = {
 		},
 		defaultVariation: 'disabled'
 	},
+
 	privacyCheckbox: {
 		datestamp: '20160310',
 		variations: {
@@ -45,6 +49,7 @@ module.exports = {
 		},
 		defaultVariation: 'original'
 	},
+
 	domainSuggestionVendor: {
 		datestamp: '20160408',
 		variations: {
@@ -53,6 +58,7 @@ module.exports = {
 		},
 		defaultVariation: 'namegen'
 	},
+
 	contextualGoogleAnalyticsNudge: {
 		datestamp: '20160409',
 		variations: {
@@ -64,6 +70,16 @@ module.exports = {
 		defaultVariation: 'drake',
 		allowExistingUsers: true,
 	},
+
+	addCustomDomainOnSiteSettingsPage: {
+		datestamp: '20160425',
+		variations: {
+			originalButton: 50,
+			domainNudge: 50
+		},
+		defaultVariation: 'originalButton'
+	},
+
 	swapButtonsMySiteSidebar: {
 		datestamp: '20160414',
 		variations: {
@@ -72,6 +88,7 @@ module.exports = {
 		},
 		defaultVariation: 'original'
 	},
+
 	guidedTours: {
 		datestamp: '20160418',
 		variations: {
@@ -82,6 +99,7 @@ module.exports = {
 		defaultVariation: 'original',
 		allowExistingUsers: true,
 	},
+
 	domainCreditsInfoNotice: {
 		datestamp: '20160420',
 		variations: {
