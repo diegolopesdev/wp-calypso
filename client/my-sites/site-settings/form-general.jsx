@@ -29,7 +29,14 @@ import TimezoneDropdown from 'components/timezone-dropdown';
 import { isFreePlan as siteHasFreePlan } from 'lib/products-values';
 import UpgradeNudge from 'my-sites/upgrade-nudge';
 import { hasCustomDomain as siteHasCustomDomain } from 'lib/site/utils';
+import { abtest } from 'lib/abtest';
 import { CUSTOM_DOMAIN } from 'lib/plans/constants';
+
+/**
+ * Module vars
+ */
+const ABTEST_NAME = 'addCustomDomainOnSiteSettingsPage';
+const EVENT_NAME_PREFIX = 'custom-domain_site-settings_';
 
 module.exports = React.createClass( {
 
@@ -189,6 +196,7 @@ module.exports = React.createClass( {
 						disabled="disabled" />
 					{ this.renderCustomAddress() }
 				</div>
+
 				{ addressDescription }
 				{ this.renderDomainNudge() }
 			</FormFieldset>
@@ -421,7 +429,11 @@ module.exports = React.createClass( {
 
 	renderCustomAddress() {
 		if ( ! config.isEnabled( 'upgrades/domain-search' ) ) {
-			return null;
+			return;
+		}
+
+		if ( abtest( ABTEST_NAME ) !== 'originalButton' ) {
+			return;
 		}
 
 		return (
@@ -446,11 +458,19 @@ module.exports = React.createClass( {
 			return;
 		}
 
+		const abtestVariant = abtest( ABTEST_NAME );
+		if ( abtestVariant !== 'domainNudge' ) {
+			return;
+		}
+
+		const eventName = `${ EVENT_NAME_PREFIX }${ abtestVariant }`;
+
 		return (
 			<UpgradeNudge
 				title={ this.translate( 'Add A Custom Domain' ) }
 				message={ this.translate( 'Upgrade now and get a free custom domain.' ) }
 				feature={ CUSTOM_DOMAIN }
+				event={ eventName }
 				icon="star"
 			/>
 		);
