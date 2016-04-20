@@ -68,10 +68,10 @@ module.exports = {
 			drake: 25,
 			settingsDisabledPlans: 25,
 			settingsDisabledPlansCompare: 25,
-			settingsDisabledFeature: 25,
+			settingsDisabledFeature: 25
 		},
 		defaultVariation: 'drake',
-		allowExistingUsers: true,
+		allowExistingUsers: true
 	},
 	swapButtonsMySiteSidebar: {
 		datestamp: '20160414',
@@ -86,9 +86,18 @@ module.exports = {
 		variations: {
 			original: 96,
 			guided: 2,
-			calypsoOnly: 2,
+			calypsoOnly: 2
 		},
 		defaultVariation: 'original',
-		allowExistingUsers: true,
+		allowExistingUsers: true
 	},
+	domainsWithPlansOnly: {
+		datestamp: '20000101',
+		variations: {
+			original: 50,
+			plansOnly: 50
+		},
+		defaultVariation: 'original',
+		allowExistingUsers: true
+	}
 };
