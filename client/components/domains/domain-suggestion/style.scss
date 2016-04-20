@@ -8,7 +8,7 @@
 		padding: 15px 20px;
 
 		.domain-product-price {
-			margin-left: 5%;
+			//margin-left: 5%;
 		}
 	}
 
@@ -49,7 +49,7 @@
 		word-break: break-all;
 
 		@include breakpoint( ">660px" ) {
-			width: 75%;
+			width: 74%;
 		}
 
 		.is-placeholder & {
