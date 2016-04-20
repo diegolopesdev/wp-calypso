@@ -184,6 +184,13 @@ const flows = {
 		lastModified: null
 	},
 
+	'domains-with-premium': {
+		steps: [ 'themes', 'domains', 'user' ],
+		destination: getSiteDestination,
+		description: 'Test for domains with plans only',
+		lastModified: '2016-04-20'
+	},
+
 	'site-user': {
 		steps: [ 'site', 'user' ],
 		destination: '/me/next?welcome',
@@ -254,6 +261,10 @@ function filterFlowName( flowName ) {
 
 	if ( includes( defaultFlows, flowName ) && abtest( 'freeTrialsInSignup' ) === 'enabled' ) {
 		return 'free-trial';
+	}
+
+	if ( includes( defaultFlows, flowName ) && abtest( 'domainsWithPlansOnly' ) === 'plansOnly' ) {
+		return 'domains-with-premium';
 	}
 
 	const locale = getLocaleSlug();
