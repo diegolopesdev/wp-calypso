@@ -219,10 +219,14 @@ function isDependentProduct( product, dependentProduct ) {
 	slug = isDomainRegistration( product ) ? 'domain' : product.product_slug;
 	dependentSlug = isDomainRegistration( dependentProduct ) ? 'domain' : dependentProduct.product_slug;
 
+	if ( product.extra.withPlansOnly === 'yes' || dependentProduct.extra.withPlansOnly === 'yes' ) {
+		return isPlan( product ) && isDomainRegistration( dependentProduct );
+	}
+
 	return (
 		productDependencies[ slug ] &&
 		productDependencies[ slug ][ dependentSlug ] &&
-		product.meta === dependentProduct.meta
+		( product.meta === dependentProduct.meta || ! product.meta )
 	);
 }
 
