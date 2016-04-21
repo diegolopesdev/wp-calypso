@@ -2,3 +2,60 @@
 	margin: 0 auto;
 	max-width: 650px;
 }
+
+.domains-step__banner {
+	background: $blue-medium;
+	color: $white;
+	padding: 48px 24px;
+	text-align: center;
+	margin-bottom: 30px;
+
+	@include breakpoint( ">660px" ) {
+		padding: 72px 24px;
+	}
+}
+
+.domains-step__banner-content {
+	margin: 0 auto;
+	max-width: 700px;
+
+	@include breakpoint( ">660px" ) {
+		display: flex;
+		text-align: left;
+	}
+}
+
+.domains-step__banner-icon {
+	display: block;
+	margin: 0 auto;
+	position: relative;
+}
+
+.domains-step__banner-premium-icon {
+	background: url( '/calypso/images/plans/plan-premium.svg' ) center no-repeat;
+	margin: 0 auto;
+	width: 128px;
+	height: 128px;
+}
+
+.domains-step__banner-copy {
+	width: 100%;
+}
+
+.domains-step__banner-heading,
+.domains-step__banner-text {
+	clear: none;
+}
+
+.domains-step__banner-heading {
+	font-size: 24px;
+	font-weight: 400;
+	margin: 24px 0 8px 0;
+}
+
+.domains-step__banner-text {
+	font-size: 18px;
+	font-weight: 300;
+	margin-left: 10%;
+	margin-right: 10%;
+}

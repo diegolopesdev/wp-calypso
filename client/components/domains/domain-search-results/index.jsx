@@ -151,9 +151,30 @@ var DomainSearchResults = React.createClass( {
 		);
 	},
 
+	banner() {
+		if ( ! this.props.withPlansOnly ) {
+			return null;
+		}
+
+		return (
+			<div className="domains-step__banner">
+				<div className="domains-step__banner-content">
+						<div className="domains-step__banner-icon">
+							<div className="domains-step__banner-premium-icon" />
+						</div>
+				</div>
+				<div className="domains-step__banner-copy">
+					<h1 className="domains-step__banner-heading">Get A Custom Domain Name with WordPress.com Premium</h1>
+					<h3 className="domains-step__banner-text">WordPress.com Premium gives you impactful customization features like a custom domain name, expanded color pallettes, and more font choices. Find a domain and upgrade now!</h3>
+				</div>
+			</div>
+		);
+	},
+
 	render: function() {
 		return (
 			<div className="domain-search-results">
+				{ this.banner() }
 				{ this.domainAvailability() }
 				{ this.suggestions() }
 			</div>
