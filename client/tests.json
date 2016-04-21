@@ -555,12 +555,12 @@
 			"plans": {
 				"test": [ "actions", "reducer" ]
 			},
-			"terms": {
-				"test": [ "actions", "reducer" ]
-			},
 			"test": [ "actions", "reducer", "selectors" ]
 		},
 		"support": {
+			"test": [ "actions", "reducer" ]
+		},
+		"terms": {
 			"test": [ "actions", "reducer" ]
 		},
 		"test": [ "index", "initial-state" ],
