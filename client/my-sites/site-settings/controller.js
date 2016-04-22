@@ -11,6 +11,7 @@ import page from 'page';
 import sitesFactory from 'lib/sites-list';
 import route from 'lib/route';
 import i18n from 'lib/mixins/i18n';
+import { renderWithReduxStore } from 'lib/react-helpers';
 import config from 'config';
 import analytics from 'lib/analytics';
 import titlecase from 'to-title-case';
@@ -75,7 +76,7 @@ module.exports = {
 			}
 		}
 
-		ReactDom.render(
+		renderWithReduxStore(
 			<SitePurchasesData>
 				<SiteSettingsComponent
 					context={ context }
@@ -83,7 +84,8 @@ module.exports = {
 					section={ context.params.section }
 					path={ context.path } />
 			</SitePurchasesData>,
-			document.getElementById( 'primary' )
+			document.getElementById( 'primary' ),
+			context.store
 		);
 
 		// analytics tracking
