@@ -11,7 +11,7 @@ var GeneralForm = require( 'my-sites/site-settings/form-general' ),
 	DeleteSiteOptions = require( './delete-site-options' ),
 	config = require( 'config' );
 
-module.exports = React.createClass({
+module.exports = React.createClass( {
 	displayName: 'SiteSettingsGeneral',
 
 	componentWillMount: function() {
@@ -23,13 +23,15 @@ module.exports = React.createClass({
 		return (
 			<div className="general-settings">
 				<GeneralForm site={ site } />
-				{ ( config.isEnabled( 'manage/site-settings/delete-site' ) && ! site.jetpack && ! site.is_vip ) ?
-				<DeleteSiteOptions
-					site={ this.props.site }
-					purchases={ this.props.purchases } />
-				: null }
+				{
+					config.isEnabled( 'manage/site-settings/delete-site' ) &&
+					! site.jetpack &&
+					! site.is_vip &&
+					<DeleteSiteOptions
+						site={ this.props.site }
+						purchases={ this.props.purchases } />
+				}
 			</div>
 		);
-
 	}
-});
+} );
