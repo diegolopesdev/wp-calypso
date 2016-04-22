@@ -8,6 +8,7 @@ import pick from 'lodash/pick';
  * Internal dependencies
  */
 import { plans } from './plans/reducer';
+import { domains } from './domains/reducer';
 import mediaStorage from './media-storage/reducer';
 import { SITE_RECEIVE, DESERIALIZE } from 'state/action-types';
 import { sitesSchema } from './schema';
@@ -47,6 +48,7 @@ export function items( state = {}, action ) {
 }
 
 export default combineReducers( {
+	domains,
 	items,
 	mediaStorage,
 	plans
