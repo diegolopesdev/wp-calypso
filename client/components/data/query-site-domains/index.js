@@ -31,7 +31,6 @@ class QuerySiteDomains extends Component {
 	}
 
 	requestSiteDomains( props = this.props ) {
-		console.log( `-> props -> `, props );
 		if ( ! props.requestingSiteDomains && props.siteId ) {
 			props.fetchSiteDomains( props.siteId );
 		}
