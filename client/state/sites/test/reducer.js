@@ -21,6 +21,7 @@ describe( 'reducer', () => {
 
 	it( 'should export expected reducer keys', () => {
 		expect( reducer( undefined, {} ) ).to.have.keys( [
+			'domains',
 			'items',
 			'mediaStorage',
 			'plans'
